@@ -1,18 +1,18 @@
+import { LoginPageModule } from './../modules/pages/login-page/login-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CoursesPageModule } from './../modules/pages/courses-page/courses-page.module';
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './components/todo/todo-list/todo-list.component';
-import { TodoListItemComponent } from './components/todo/todo-list-item/todo-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TodoListComponent,
-    TodoListItemComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoursesPageModule,
+    LoginPageModule
   ],
   providers: [],
   bootstrap: [
