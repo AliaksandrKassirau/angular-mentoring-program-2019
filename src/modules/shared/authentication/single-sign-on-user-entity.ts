@@ -1,7 +1,7 @@
 import { IUserEntity } from './user-entity';
 
 export class SingleSignOnUserEntity implements IUserEntity {
-  id: number;
-  firstname: string;
-  lastname: string;
+  public id: number;
+  public firstname: string;
+  public lastname: string;
 }

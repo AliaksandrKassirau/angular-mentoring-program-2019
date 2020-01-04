@@ -13,10 +13,10 @@ export class CoursesContainerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.courses = [
-      new Course(1, "Video Course 1. Name tag", new Date(), 15, "Lorem ipsum"),
-      new Course(2, "Video Course 2. Name tag", new Date(), 15, "Lorem ipsum")
+      new Course(1, 'Video Course 1. Name tag', new Date(), 15, 'Lorem ipsum'),
+      new Course(2, 'Video Course 2. Name tag', new Date(), 15, 'Lorem ipsum')
     ];
   }
 

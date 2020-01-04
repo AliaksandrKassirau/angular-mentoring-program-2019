@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DurationPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): any {
+  public transform(value: number, ...args: any[]): string {
     const durationInMinutes: number = value as number;
     const hours = Math.floor(durationInMinutes / 60);
     const minutes = durationInMinutes % 60;
