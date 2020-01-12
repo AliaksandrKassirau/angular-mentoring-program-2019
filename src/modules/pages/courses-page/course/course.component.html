@@ -1,12 +1,13 @@
-<div class="container">
+<div class="course-info-panel">
   <div class="header-container">
-    <div class="Video-Course-1-Name">{{course.title}}</div>
-    <div>{{course.creationDate | date}} {{course.durationInMinutes | duration}}</div>
+    <span class="course-name">{{course.title}}</span>
+    <span class="course-info">{{course.creationDate | date}} {{course.durationInMinutes | duration}}</span>
   </div>
-  <div>
-    <div>
-      {{course.description}}
-    </div>
+  <div class="description-text">
+    <span>{{course.description}}</span>
   </div>
-  {{course.id}}
+</div>
+<div class="buttons-panel">
+  <button type="button" class="edit-button" (click)="edit()"><i class="fa fa-edit"></i> Edit</button>
+  <button type="button" class="delete-button" (click)="delete()"><i class="fa fa-trash"></i> Delete</button>
 </div>

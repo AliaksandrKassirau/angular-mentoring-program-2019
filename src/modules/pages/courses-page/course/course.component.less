@@ -1,39 +1,64 @@
-.container {
-  width: 80%;
+:host {
+  display: flex;
+  width: 100%;
   height: 163px;
   border-radius: 8px;
   box-shadow: 0 1px 24px 0 rgba(18, 21, 35, 0.08);
   background-color: #ffffff;
+  margin-top: 15px;
+
+  .course-info-panel {
+    width: 75%;
+    padding: 24px;
+
+    .header-container {
+      display: flex;
+      align-items: right;
+
+      .course-name {
+        height: 30px;
+        width: 80%;
+        font-family: SourceSansPro;
+        font-size: 24px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.25;
+        letter-spacing: normal;
+        color: #2c2f3c;
+        float: left;
+      }
+
+      .course-info {
+        width: 20%;
+      }
+    }
+
+    .description-text {
+      margin-top: 15px;
+      font-family: SourceSansPro;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      color: var(--slate-grey);
+    }
+  }
+
+  .buttons-panel {
+    width: 25%;
+
+    button {
+      width: 75px;
+      height: 24px;
+      background-color: var(--dark-sky-blue);
+      border: none;
+      margin: 15px;
+      margin-top: 70px;
+    }
+  }
 }
 
-.container .header-container {
-  width: 80%;
-  position: relative;
-}
 
-.Video-Course-1-Name {
-  width: 263px;
-  height: 30px;
-  font-family: SourceSansPro;
-  font-size: 24px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: normal;
-  color: #2c2f3c;
-  float: left;
-}
-
-.Learn-about-where-yo {
-  width: 801px;
-  height: 77px;
-  font-family: SourceSansPro;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.71;
-  letter-spacing: normal;
-  color: #525462;
-}
