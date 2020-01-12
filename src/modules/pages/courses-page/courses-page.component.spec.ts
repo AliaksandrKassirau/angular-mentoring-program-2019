@@ -1,6 +1,10 @@
+import { DurationPipe } from './duration.pipe';
+import { CourseComponent } from './course/course.component';
+import { CoursesContainerComponent } from './courses-container/courses-container.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesPageComponent } from './courses-page.component';
+import { EpamSharedComponentsModule } from 'src/modules/components/epam-shared-components/epam-shared-components.module';
 
 describe('CoursesPageComponent', () => {
   let component: CoursesPageComponent;
@@ -8,7 +12,13 @@ describe('CoursesPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesPageComponent ]
+      imports: [EpamSharedComponentsModule],
+      declarations: [
+        CoursesPageComponent,
+        CoursesContainerComponent,
+        CourseComponent,
+        DurationPipe
+      ]
     })
     .compileComponents();
   }));
