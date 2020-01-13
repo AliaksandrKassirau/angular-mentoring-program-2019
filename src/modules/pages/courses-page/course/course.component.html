@@ -1,7 +1,10 @@
 <div class="course-info-panel">
   <div class="header-container">
     <span class="course-name">{{course.title}}</span>
-    <span class="course-info">{{course.creationDate | date}} {{course.durationInMinutes | duration}}</span>
+    <div class="course-info">
+      <i class="fa fa-history"></i> {{course.durationInMinutes | duration}}
+      <i class="fa fa-calendar"></i> {{course.creationDate | date}}
+    </div>
   </div>
   <div class="description-text">
     <span>{{course.description}}</span>

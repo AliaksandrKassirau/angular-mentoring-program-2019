@@ -54,7 +54,11 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
   private generateCourse(): ICourse {
     return new Course(++this.sequence,
       `Video Course ${this.sequence}. Name tag`,
-      new Date(), 15,
+      this.randomDate(new Date(2012, 0, 1), new Date()), 15,
       CoursesContainerComponent.defaultDescription);
+  }
+
+  private randomDate(start: Date, end: Date): Date {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
   }
 }
