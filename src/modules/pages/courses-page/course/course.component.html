@@ -1,6 +1,6 @@
-<div class="course-info-panel">
+<div [ngClass]="{topRated: course.topRated}" class="course-info-panel">
   <div class="header-container">
-    <span class="course-name">{{course.title}}</span>
+    <span class="course-name">{{course.title | uppercase}} <i *ngIf="course.topRated" class="fa fa-star"></i></span>
     <div class="course-info">
       <i class="fa fa-history"></i> {{course.durationInMinutes | duration}}
       <i class="fa fa-calendar"></i> {{course.creationDate | date}}

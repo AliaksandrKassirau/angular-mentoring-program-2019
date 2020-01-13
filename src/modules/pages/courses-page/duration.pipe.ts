@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+// this pipe is used to covert minutes to text representation of hours and minutes.
 @Pipe({
   name: 'duration'
 })

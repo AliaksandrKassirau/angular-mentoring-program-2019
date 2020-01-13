@@ -1,3 +1,6 @@
+import { DetectCourseTypeDirective } from './../detect-course-type.directive';
+import { SearchPipe } from './../search.pipe';
+import { OrderByPipe } from './../order-by.pipe';
 import { By } from '@angular/platform-browser';
 import { DurationPipe } from './../duration.pipe';
 import { CourseComponent } from './../course/course.component';
@@ -11,7 +14,14 @@ describe('CoursesContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesContainerComponent, CourseComponent, DurationPipe ]
+      declarations: [
+        CoursesContainerComponent,
+        CourseComponent,
+        DurationPipe,
+        OrderByPipe,
+        SearchPipe,
+        DetectCourseTypeDirective
+      ]
     })
     .compileComponents();
   }));

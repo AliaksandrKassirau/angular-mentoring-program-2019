@@ -5,13 +5,19 @@ import { CoursesPageComponent } from './courses-page.component';
 import { CourseComponent } from './course/course.component';
 import { CoursesContainerComponent } from './courses-container/courses-container.component';
 import { DurationPipe } from './duration.pipe';
+import { OrderByPipe } from './order-by.pipe';
+import { SearchPipe } from './search.pipe';
+import { DetectCourseTypeDirective } from './detect-course-type.directive';
 
 @NgModule({
   declarations: [
     CoursesPageComponent,
     CourseComponent,
     CoursesContainerComponent,
-    DurationPipe
+    DurationPipe,
+    OrderByPipe,
+    SearchPipe,
+    DetectCourseTypeDirective
   ],
   imports: [
     CommonModule,

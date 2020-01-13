@@ -3,10 +3,10 @@
     <div class="search-block">
       <div class="search-input">
         <img src="./assets/ic-search.svg" />
-        <input type="text" class="search-field" placeholder="Text to search"/>
+        <input #searchField type="text" class="search-field" [value]="searchInputValue" placeholder="Text to search" />
       </div>
     </div>
-    <button class="search-button" >
+    <button class="search-button" (click)="onCoursesSearched(searchField.value)">
       <i class="fa fa-search"></i> Search
     </button>
   </div>
@@ -17,8 +17,10 @@
     </button>
   </div>
   <div class="courses-list-container">
-    <app-course *ngFor="let course of courses"
+    <div *ngIf="courses.length == 0; else elseBlock">No data.Feel free to add new course.</div>
+    <app-course #elseBlock *ngFor="let course of courses | orderBy:'creationDate' | search:searchInputValue"
       [course]="course"
+      [appDetectCourseType]="course"
       (edited)="onCourseEdited($event)"
       (deleted)="onCourseDeleted($event)">
     </app-course>

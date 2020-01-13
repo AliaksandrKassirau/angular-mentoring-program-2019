@@ -5,6 +5,7 @@ export class Course implements ICourse {
               public title: string,
               public creationDate: Date,
               public durationInMinutes: number,
-              public description: string) {
+              public description: string,
+              public topRated: boolean) {
   }
 }

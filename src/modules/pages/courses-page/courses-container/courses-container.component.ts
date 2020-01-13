@@ -17,8 +17,10 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
     degree requirements and in course schedules that contain descriptions
     for all courses offered during a particular semester.`;
 
+  public searchInputValue = '';
   public courses: ICourse[];
   private sequence: number;
+
   constructor() { }
 
   public ngOnInit() {
@@ -37,7 +39,7 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
 
   public onCourseAdded(course: ICourse) {
     const addedCourse: ICourse = this.generateCourse();
-    this.courses.push(addedCourse);
+    this.courses = [...this.courses, addedCourse];
     console.log('Added course: ', addedCourse);
   }
 
@@ -51,11 +53,15 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
     console.log('Deleted course: ', deletedCourse);
   }
 
+  public onCoursesSearched(searchInputValue: string) {
+    this.searchInputValue = searchInputValue;
+  }
+
   private generateCourse(): ICourse {
     return new Course(++this.sequence,
       `Video Course ${this.sequence}. Name tag`,
-      this.randomDate(new Date(2012, 0, 1), new Date()), 15,
-      CoursesContainerComponent.defaultDescription);
+      this.randomDate(new Date(2020, 0, 1), new Date(2020, 1, 1)), 15,
+      CoursesContainerComponent.defaultDescription, Math.random() >= 0.5);
   }
 
   private randomDate(start: Date, end: Date): Date {
