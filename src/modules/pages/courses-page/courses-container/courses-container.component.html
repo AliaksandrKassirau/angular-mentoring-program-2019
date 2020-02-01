@@ -17,7 +17,7 @@
     </button>
   </div>
   <div class="courses-list-container">
-    <div *ngIf="courses.length == 0; else elseBlock">No data.Feel free to add new course.</div>
+    <div *ngIf="!courses.length">No data.Feel free to add new course.</div>
     <app-course #elseBlock *ngFor="let course of courses | orderBy:'creationDate' | search:searchInputValue"
       [course]="course"
       [appDetectCourseType]="course"

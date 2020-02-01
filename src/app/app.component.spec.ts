@@ -1,4 +1,4 @@
-import { CoursesPageModule } from './../modules/pages/courses-page/courses-page.module';
+import { CoursesPageModule } from 'src/modules/pages/courses-page/courses-page.module';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 

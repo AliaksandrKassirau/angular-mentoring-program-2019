@@ -12,6 +12,6 @@ export class LogoComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
   }
 }

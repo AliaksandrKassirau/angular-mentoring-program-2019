@@ -1,4 +1,4 @@
-import { ICourse } from './../icourse';
+import { ICourse } from 'src/modules/pages/courses-page/icourse';
 import { Component, EventEmitter, Input, Output, SimpleChanges,
   OnChanges, OnInit,
   AfterContentInit, AfterContentChecked,
@@ -25,19 +25,19 @@ export class CourseComponent implements OnInit, OnChanges,
   @Output()
   public edited = new EventEmitter<ICourse>();
 
-  public edit() {
+  public edit(): void {
     this.edited.emit(this.course);
   }
 
-  public delete() {
+  public delete(): void {
     this.deleted.emit(this.course);
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
+  public ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges', changes);
   }
 
-  public ngAfterContentInit() {
+  public ngAfterContentInit(): void {
     console.log('ngAfterContentInit');
   }
 
@@ -52,10 +52,10 @@ export class CourseComponent implements OnInit, OnChanges,
     console.log('ngAfterViewInit');
   }
 
-  public ngOnDestroy() {
+  public ngOnDestroy(): void {
     console.log('ngOnDestroy');
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
   }
 }

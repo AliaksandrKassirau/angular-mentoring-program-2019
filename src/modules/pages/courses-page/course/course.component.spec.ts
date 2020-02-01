@@ -1,6 +1,6 @@
-import { DurationPipe } from './../duration.pipe';
-import { ICourse } from './../icourse';
-import { Course } from './../course';
+import { DurationPipe } from 'src/modules/pages/courses-page/duration.pipe';
+import { ICourse } from 'src/modules/pages/courses-page/icourse';
+import { Course } from 'src/modules/pages/courses-page/course';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CourseComponent } from './course.component';

@@ -9,7 +9,7 @@ export class LogOffComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
   }
 
 }

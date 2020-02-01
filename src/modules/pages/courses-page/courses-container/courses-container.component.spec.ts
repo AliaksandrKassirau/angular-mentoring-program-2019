@@ -1,9 +1,9 @@
-import { DetectCourseTypeDirective } from './../detect-course-type.directive';
-import { SearchPipe } from './../search.pipe';
-import { OrderByPipe } from './../order-by.pipe';
+import { DetectCourseTypeDirective } from 'src/modules/pages/courses-page/detect-course-type.directive';
+import { SearchPipe } from 'src/modules/pages/courses-page/search.pipe';
+import { OrderByPipe } from 'src/modules/pages/courses-page/order-by.pipe';
 import { By } from '@angular/platform-browser';
-import { DurationPipe } from './../duration.pipe';
-import { CourseComponent } from './../course/course.component';
+import { DurationPipe } from 'src/modules/pages/courses-page/duration.pipe';
+import { CourseComponent } from 'src/modules/pages/courses-page/course/course.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesContainerComponent } from './courses-container.component';

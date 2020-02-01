@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+  // https://medium.com/better-programming/angular-manipulate-properly-the-dom-with-renderer-16a756508cba
+  // https://netbasal.com/understanding-viewchildren-contentchildren-and-querylist-in-angular-896b0c689f6e
+
+
+http://5e355c04f7e55d0014ad4d27.mockapi.io/api/v1/courses
+http://5e355c04f7e55d0014ad4d27.mockapi.io/api/v1/courses/1
+http://5e355c04f7e55d0014ad4d27.mockapi.io/api/v1/courses?page=1&limit=10
+http://5e355c04f7e55d0014ad4d27.mockapi.io/api/v1/courses?search=Pt*
+

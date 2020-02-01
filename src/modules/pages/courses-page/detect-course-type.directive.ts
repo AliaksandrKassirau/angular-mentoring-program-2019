@@ -17,7 +17,7 @@ export class DetectCourseTypeDirective implements OnInit {
     this.handleUpcomingCourse();
   }
 
-  private handleFreshCourse() {
+  private handleFreshCourse(): void {
     const creationDate = this.course.creationDate;
     const dateNow = new Date();
     const freshCourseDate = new Date();
@@ -28,13 +28,13 @@ export class DetectCourseTypeDirective implements OnInit {
     }
   }
 
-  private handleUpcomingCourse() {
+  private handleUpcomingCourse(): void {
     if (this.course.creationDate > new Date()) {
       this.setBorder('blue');
     }
   }
 
-  private setBorder(color: string) {
+  private setBorder(color: string): void {
     this.renderer.setStyle(this.elementRef.nativeElement, 'border', `2px solid ${color}`);
   }
 }
