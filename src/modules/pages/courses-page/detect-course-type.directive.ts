@@ -1,5 +1,5 @@
-import { ICourse } from './icourse';
 import { Directive, Input, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { ICourse } from 'src/modules/shared/courses-shared/icourse';
 
 @Directive({
   selector: '[appDetectCourseType]'

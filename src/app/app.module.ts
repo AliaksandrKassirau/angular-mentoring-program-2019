@@ -1,3 +1,4 @@
+import { CourseAdministrationPageModule } from './../modules/pages/course-administration-page/course-administration-page.module';
 import { PageNotFoundComponent } from 'src/modules/pages/not-found-page/page-not-found/page-not-found.component';
 import { NotFoundPageModule } from 'src/modules/pages/not-found-page/not-found-page.module';
 import { EpamSharedComponentsModule } from 'src/modules/components/epam-shared-components/epam-shared-components.module';
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from 'src/modules/pages/login-page/login-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CourseAdministrationPageComponent } from 'src/modules/pages/course-administration-page/course-administration-page.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesPageComponent
+  },
+  {
+    path: 'courses/add',
+    component: CourseAdministrationPageComponent
+  },
+  {
+    path: 'courses/edit',
+    component: CourseAdministrationPageComponent
   },
   {
     path: 'login',
@@ -39,6 +49,7 @@ const routes: Routes = [
     NgbModule,
     BrowserModule,
     CoursesPageModule,
+    CourseAdministrationPageModule,
     LoginPageModule,
     EpamSharedComponentsModule,
     NotFoundPageModule,

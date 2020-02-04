@@ -1,14 +1,16 @@
-import { ICourse } from 'src/modules/pages/courses-page/icourse';
+import { ICourse } from 'src/modules/shared/courses-shared/icourse';
 import { Component, EventEmitter, Input, Output, SimpleChanges,
   OnChanges, OnInit,
   AfterContentInit, AfterContentChecked,
   AfterViewInit, AfterViewChecked,
-  OnDestroy } from '@angular/core';
+  OnDestroy,
+  ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
-  styleUrls: ['./course.component.less']
+  styleUrls: ['./course.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseComponent implements OnInit, OnChanges,
  AfterContentInit, AfterContentChecked,

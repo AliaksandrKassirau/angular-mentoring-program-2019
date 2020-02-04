@@ -1,7 +1,8 @@
 import { DeleteConfirmationDialogComponent } from './delete-confirmation-dialog/delete-confirmation-dialog.component';
-import { CoursesService } from 'src/modules/pages/courses-page/courses.service';
-import { ICourse } from 'src/modules/pages/courses-page/icourse';
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { CoursesService } from 'src/modules/shared/courses-shared/courses.service';
+import { ICourse } from 'src/modules/shared/courses-shared/icourse';
+import { Component, OnInit, OnChanges,
+  SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

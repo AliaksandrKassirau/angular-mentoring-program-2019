@@ -1,9 +1,9 @@
-import { ICourse } from './icourse';
+import { ICourse } from '../../shared/courses-shared/icourse';
 import { DetectCourseTypeDirective } from './detect-course-type.directive';
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { Course } from './course';
+import { Course } from 'src/modules/shared/courses-shared/course';
 
 @Component({
   template: `<div [appDetectCourseType]="course"></div>`

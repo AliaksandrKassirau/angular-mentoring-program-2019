@@ -1,4 +1,4 @@
-import { Course } from './course';
+import { Course } from '../../shared/courses-shared/course';
 import { OrderByPipe } from './order-by.pipe';
 
 describe('OrderByPipe', () => {

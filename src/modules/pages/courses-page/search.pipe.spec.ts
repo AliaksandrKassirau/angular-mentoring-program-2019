@@ -1,5 +1,5 @@
 import { SearchPipe } from './search.pipe';
-import { Course } from './course';
+import { Course } from '../../shared/courses-shared/course';
 
 describe('SearchPipe', () => {
   it('create an instance', () => {
