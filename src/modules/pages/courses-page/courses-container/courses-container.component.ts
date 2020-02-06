@@ -4,6 +4,7 @@ import { ICourse } from 'src/modules/shared/courses-shared/icourse';
 import { Component, OnInit, OnChanges,
   SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-container',
@@ -15,6 +16,7 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
   public courses: ICourse[];
 
   constructor(private readonly coursesService: CoursesService,
+              private router: Router,
               public dialog: MatDialog) { }
 
   public ngOnInit(): void {
@@ -26,13 +28,12 @@ export class CoursesContainerComponent implements OnInit, OnChanges {
     console.log('ngOnChanges:', changes);
   }
 
-  public onCourseAdded(course: ICourse): void {
-    this.coursesService.createCourse(course);
-    this.courses = this.coursesService.getList();
+  public onCourseAdded(): void {
+    this.router.navigate(['courses', 'add']);
   }
 
   public onCourseEdited(editedCourse: ICourse): void {
-    this.coursesService.updateCourse(editedCourse);
+    this.router.navigate(['courses', editedCourse.id]);
   }
 
   public onCourseDeleted(deletedCourse: ICourse): void {

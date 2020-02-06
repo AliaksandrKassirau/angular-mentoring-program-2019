@@ -1,3 +1,4 @@
+import { MatIconModule } from '@angular/material/icon';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LogOffComponent } from './log-off.component';
@@ -8,7 +9,12 @@ describe('LogOffComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogOffComponent ]
+      declarations: [
+        LogOffComponent
+      ],
+      imports: [
+        MatIconModule
+      ]
     })
     .compileComponents();
   }));

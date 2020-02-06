@@ -1,7 +1,19 @@
+import { MatIconModule } from '@angular/material/icon';
+import { LogOffComponent } from './log-off/log-off.component';
 import { LogoComponent } from './logo/logo.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/courses',
+    pathMatch: 'full'
+  }
+];
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -9,7 +21,19 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent, LogoComponent ]
+      declarations: [
+        HeaderComponent,
+        LogoComponent,
+        LogOffComponent
+      ],
+      imports: [
+        MatIconModule,
+        RouterModule,
+        RouterTestingModule.withRoutes(routes)
+      ],
+      providers: [
+
+      ]
     })
     .compileComponents();
   }));

@@ -1,3 +1,4 @@
+import { AuthGuard } from './../modules/shared/authentication/auth.guard';
 import { CourseAdministrationPageModule } from './../modules/pages/course-administration-page/course-administration-page.module';
 import { PageNotFoundComponent } from 'src/modules/pages/not-found-page/page-not-found/page-not-found.component';
 import { NotFoundPageModule } from 'src/modules/pages/not-found-page/not-found-page.module';
@@ -14,22 +15,27 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CourseAdministrationPageComponent } from 'src/modules/pages/course-administration-page/course-administration-page.component';
 
+
 const routes: Routes = [
   {
     path: '',
-    component: CoursesPageComponent
+    redirectTo: '/courses',
+    pathMatch: 'full'
   },
   {
     path: 'courses',
-    component: CoursesPageComponent
+    component: CoursesPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'courses/add',
-    component: CourseAdministrationPageComponent
+    component: CourseAdministrationPageComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: 'courses/edit',
-    component: CourseAdministrationPageComponent
+    path: 'courses/:id',
+    component: CourseAdministrationPageComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',

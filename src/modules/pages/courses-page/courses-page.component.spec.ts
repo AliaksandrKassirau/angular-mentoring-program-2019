@@ -8,6 +8,17 @@ import { CoursesPageComponent } from './courses-page.component';
 import { EpamSharedComponentsModule } from 'src/modules/components/epam-shared-components/epam-shared-components.module';
 import { DetectCourseTypeDirective } from './detect-course-type.directive';
 import { DurationPipe } from 'src/modules/shared/courses-shared/duration.pipe';
+import { Routes } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatDialogModule } from '@angular/material/dialog';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/courses',
+    pathMatch: 'full'
+  }
+];
 
 describe('CoursesPageComponent', () => {
   let component: CoursesPageComponent;
@@ -15,7 +26,11 @@ describe('CoursesPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [EpamSharedComponentsModule],
+      imports: [
+        EpamSharedComponentsModule,
+        RouterTestingModule.withRoutes(routes),
+        MatDialogModule
+      ],
       declarations: [
         CoursesPageComponent,
         CoursesContainerComponent,

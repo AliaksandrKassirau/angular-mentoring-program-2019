@@ -1,3 +1,4 @@
+import { AuthService } from './../../../shared/authentication/auth.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -10,9 +11,13 @@ export class HeaderComponent implements OnInit {
   @Input()
   public logoUrl: string;
 
-  constructor() { }
+  constructor(private readonly authService: AuthService) { }
 
   public ngOnInit(): void {
+  }
+
+  public onLogOut(): void {
+    this.authService.logout();
   }
 
 }

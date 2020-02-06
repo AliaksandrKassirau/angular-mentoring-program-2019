@@ -28,9 +28,9 @@ export class CoursesService {
   }
 
   public createCourse(course: ICourse): ICourse {
-    const randomlyGeneratedCourse = this.generateCourse();
-    this.courses = [...this.courses, randomlyGeneratedCourse];
-    console.log('Added course: ', randomlyGeneratedCourse);
+    course.id = ++this.sequence;
+    this.courses = [...this.courses, course];
+    console.log('Added course: ', course);
     return course;
   }
 

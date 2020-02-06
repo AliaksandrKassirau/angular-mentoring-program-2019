@@ -1,3 +1,7 @@
 <div class="container">
   <app-logo [logoUrl]="logoUrl"></app-logo>
+  <div class="user-info-container">
+    <a (click)="onLogOut()">Log out</a>
+    <app-log-off></app-log-off>
+  </div>
 </div>

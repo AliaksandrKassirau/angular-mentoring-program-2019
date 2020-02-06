@@ -1,6 +1,7 @@
 import { AuthService } from './../../../shared/authentication/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -11,6 +12,7 @@ export class LoginFormComponent implements OnInit {
   public loginForm: FormGroup;
 
   constructor(private readonly formBuilder: FormBuilder,
+              private route: ActivatedRoute,
               private readonly authService: AuthService) { }
 
   public ngOnInit(): void {
@@ -24,9 +26,8 @@ export class LoginFormComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
-
-    this.authService.login(credentials);
+    console.log('DEBUG PLACEHOLDER', this.route);
+    this.authService.login(credentials, 'courses');
     this.loginForm.reset();
   }
-
 }

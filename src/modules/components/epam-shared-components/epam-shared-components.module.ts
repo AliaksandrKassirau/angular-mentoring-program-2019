@@ -6,6 +6,7 @@ import { LogoComponent } from './header/logo/logo.component';
 import { UserLoginComponent } from './header/user-login/user-login.component';
 import { LogOffComponent } from './header/log-off/log-off.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     BreadcrumbsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   exports: [
     HeaderComponent,

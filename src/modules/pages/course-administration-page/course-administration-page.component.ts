@@ -1,6 +1,10 @@
+import { ICourse } from 'src/modules/shared/courses-shared/icourse';
+import { CoursesService } from 'src/modules/shared/courses-shared/courses.service';
 import { Component, OnInit } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Course } from 'src/modules/shared/courses-shared/course';
 
 @Component({
   selector: 'app-course-administration-page',
@@ -9,22 +13,40 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 })
 export class CourseAdministrationPageComponent implements OnInit {
 
-  public courseId: number;
-  public title: string;
-  public description: string;
-  public durationInMinutes: number;
-  public courseDate: Date;
+  public course: ICourse;
   public authors: string[] = [];
   public readonly separatorKeysCodes: number[] = [ENTER, COMMA];
 
-  constructor() {
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private readonly courseService: CoursesService) {
   }
 
   public ngOnInit(): void {
-    this.durationInMinutes = 60;
+    console.log(this.route);
+    if (this.route.snapshot.paramMap.has('id')) {
+      const id = this.route.snapshot.paramMap.get('id') as unknown as number;
+      this.course = this.courseService.getCourseById(id);
+      console.log('Course was loaded', this.course);
+    } else {
+      this.course = new Course(null, null, null, null, null, null);
+    }
   }
 
-  public add(event: MatChipInputEvent): void {
+  public onCourseSaved(): void {
+    if (this.course.id === null) {
+      this.courseService.createCourse(this.course);
+    } else {
+      this.courseService.updateCourse(this.course);
+    }
+    this.router.navigate(['courses']);
+  }
+
+  public onEditingCanceled(): void {
+    this.router.navigate(['courses']);
+  }
+
+  public addAuthor(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
 
@@ -38,7 +60,7 @@ export class CourseAdministrationPageComponent implements OnInit {
     }
   }
 
-  public remove(author: string): void {
+  public removeAuthor(author: string): void {
     const index = this.authors.indexOf(author);
 
     if (index >= 0) {
